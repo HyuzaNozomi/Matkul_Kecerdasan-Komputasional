@@ -1,5 +1,3 @@
-Tentu, ini adalah draf **README** yang dirancang khusus untuk repositori mata kuliah **Kecerdasan Komputasional**. Format ini disusun agar terlihat profesional, informatif, dan mudah dipahami, baik untuk kebutuhan arsip pribadi maupun untuk referensi dosen/rekan sejawat.
-
 ---
 
 # 📚 Kecerdasan Komputasional (Computational Intelligence)
