@@ -1,7 +1,3 @@
-Ah, maaf jika draf *Readme* sebelumnya terlalu berfokus pada konsep umum! Jika yang kamu butuhkan adalah **penjelasan baris demi baris (atau blok per blok) dari *source code*-nya** untuk ditambahkan ke dalam *Readme*, berikut adalah pembedahannya dengan bahasa manusia:
-
-Kamu bisa menambahkan bagian ini ke dalam `README.md` dengan judul **"Bedah Kode (Penjelasan Teknis)"**:
-
 ---
 
 ## 🔬 Bedah Kode: Memahami Cara Kerjanya
