@@ -1,3 +1,4 @@
+
 ---
 
 # 📚 Kecerdasan Komputasional (Computational Intelligence)
@@ -44,20 +45,9 @@ Berikut adalah daftar materi utama yang dipelajari:
 
 ---
 
-## Daftar Pustaka & Referensi
-
-Berikut adalah literatur utama yang menjadi rujukan dalam penyusunan tugas dan pemahaman konsep di mata kuliah ini:
-
-1. **Haykin, S. S. (2009).** *Neural Networks and Learning Machines* (3rd ed.). Pearson Education.
-2. **Jang, J. S. R., Sun, C. T., & Mizutani, E. (1997).** *Neuro-Fuzzy and Soft Computing: A Computational Approach to Learning and Machine Intelligence*. Prentice Hall.
-3. **Goldberg, D. E. (1989).** *Genetic Algorithms in Search, Optimization, and Machine Learning*. Addison-Wesley.
-4. **Engelbrecht, A. P. (2007).** *Computational Intelligence: An Introduction*. John Wiley & Sons.
-5. **Ross, T. J. (2010).** *Fuzzy Logic with Engineering Applications*. John Wiley & Sons.
 
 ---
 
 > **Catatan:** Repositori ini dibuat untuk tujuan pembelajaran. Pastikan untuk selalu melakukan verifikasi terhadap teori yang diterapkan dalam setiap kode program.
 
 ---
-
-Apakah Anda memerlukan bantuan untuk menambahkan bagian khusus, seperti panduan cara menjalankan kode Python di repositori ini?
