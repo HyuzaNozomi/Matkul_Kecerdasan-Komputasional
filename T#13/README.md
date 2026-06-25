@@ -1,5 +1,3 @@
-Tentu, ini adalah draf `README.md` yang disusun secara profesional, terstruktur, dan mudah dipahami oleh dosen atau pembaca kode lainnya. Kamu bisa menyalin teks ini ke dalam file bernama `README.md` di folder proyekmu.
-
 ---
 
 # Proyek: Q-Learning pada Environment Taxi-v4
@@ -62,11 +60,3 @@ Program ini menggunakan pengaturan (*tuning*) sebagai berikut:
 3. Jalankan sel tersebut. Grafik perbandingan akan muncul otomatis, diikuti dengan log pergerakan taksi dalam simulasi *testing* di akhir *output*.
 
 ---
-
-### Penjelasan Mengapa README Ini Dibuat Seperti Ini:
-
-* **Struktur Profesional:** Dosen biasanya menyukai README yang memiliki *Daftar Isi* agar mudah dinavigasi.
-* **Analisis Teknis:** Penjelasan mengenai *Hyperparameter* menunjukkan bahwa kamu tidak sekadar "bisa menjalankan kode", tetapi juga mengerti *mengapa* angka-angka tersebut dipilih.
-* **Kejelasan Alur:** Bagian *Struktur Kode* membantu dosen memahami alur logika program tanpa harus membaca baris demi baris kodenya terlebih dahulu.
-
-Apakah ada bagian dari `README` ini yang ingin kamu tambah atau ubah?
