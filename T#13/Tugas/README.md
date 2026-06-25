@@ -1,3 +1,27 @@
+# Q-Learning AI: Agen Taksi Pintar (Taxi-v4)
+
+Pernahkah kamu membayangkan bagaimana caranya mengajari sebuah program komputer untuk menjadi supir taksi yang handal? Kode ini adalah jawabannya!
+
+Proyek ini menggunakan algoritma **Q-Learning** (sebuah cabang dari *Reinforcement Learning*) untuk mengajari sebuah Agen AI (Kecerdasan Buatan) cara menjemput dan mengantar penumpang di lingkungan simulasi **Taxi-v4** dari library Gymnasium.
+
+Pendekatannya mirip seperti melatih hewan peliharaan: kita memberikan **hadiah (reward)** jika dia melakukan hal yang benar, dan **hukuman (penalty)** jika dia melakukan kesalahan.
+
+---
+
+## 🛠️ Prasyarat (Yang Dibutuhkan)
+
+Sebelum menjalankan kode ini, pastikan kamu sudah menginstal beberapa "peralatan" (library) Python berikut di komputermu:
+
+* `numpy` (Untuk perhitungan matematika dan tabel memori)
+* `gymnasium` (Dunia simulasi taksinya)
+* `matplotlib` (Untuk menggambar grafik hasil belajar)
+
+Cara installnya:
+
+```bash
+pip install numpy gymnasium matplotlib
+
+```
 ---
 
 ## 🔬 Bedah Kode: Memahami Cara Kerjanya
@@ -120,4 +144,61 @@ while not done:
 
 ```
 
-Di bagian paling akhir, kita memanggil arena taksi lagi, tapi kali ini dengan `render_mode="ansi"` (agar bisa divisualisasikan dalam bentuk teks di layar). Di sini, AI **tidak lagi menggunakan coba-coba (tidak ada epsilon)**. Dia 100% menggunakan buku catatan dari lulusan terbaiknya (`q_table_5000`) untuk menjemput penumpang dengan langkah seefisien mungkin!
+
+---
+
+## 🧠 Bagaimana Cara AI Ini Belajar? (Penjelasan Kode)
+
+Kode ini dibagi menjadi tiga bagian utama, ibarat **Sekolah**, **Ujian Nasional**, dan **Kerja Lapangan**. Berikut adalah penjelasan dengan "bahasa manusia":
+
+### 1. Masa Sekolah (Proses Training)
+
+Di dalam fungsi `train_taxi_agent`, AI kita dimasukkan ke dalam simulasi berulang-ulang (disebut *Episode*).
+
+* **Buku Catatan (Q-Table):** AI dibekali sebuah tabel kosong bernama Q-Table. Setiap kali dia berada di suatu posisi dan mengambil tindakan, dia akan mencatat apakah tindakan itu menghasilkan poin bagus atau buruk.
+* **Coba-coba vs Pengalaman (Eksplorasi vs Eksploitasi):** Awalnya, AI tidak tahu apa-apa, jadi dia akan bergerak secara **acak** (coba-coba/eksplorasi). Namun seiring berjalannya waktu, dia akan mulai mengandalkan **buku catatannya** untuk mengambil keputusan yang pasti menguntungkan (pengalaman/eksploitasi).
+* **Mengingat Masa Depan (Persamaan Bellman):** Ini adalah rumus matematika di dalam kode yang memastikan AI tidak hanya mencari poin instan, tapi juga merencanakan rute terbaik untuk jangka panjang.
+
+### 2. Ujian Nasional (Evaluasi dan Perbandingan)
+
+Bagaimana kita tahu AI sudah pintar? Kode ini tidak hanya melatih satu AI, melainkan tiga AI sekaligus dengan "waktu sekolah" yang berbeda-beda:
+
+* AI yang belajar selama **1.000 episode**
+* AI yang belajar selama **2.000 episode**
+* AI yang belajar selama **5.000 episode**
+
+Setelah ketiganya selesai belajar, program akan memunculkan sebuah **Grafik Visualisasi**. Dari grafik ini, kita bisa melihat bahwa AI yang belajar lebih lama (5.000 episode) grafik poinnya akan lebih stabil dan tinggi dibandingkan yang belajarnya hanya sebentar.
+
+### 3. Kerja Lapangan (Testing/Simulasi)
+
+Setelah mengetahui bahwa agen yang belajar 5.000 episode adalah yang paling pintar, kita mempekerjakannya di dunia nyata!
+
+* Di bagian akhir kode, AI (lulusan 5.000 episode) diuji coba untuk mengantar penumpang **tanpa boleh mencoba-coba lagi secara acak**.
+* Dia murni menggunakan ingatannya (Q-Table) untuk mencari penumpang, menjemputnya, dan mengantarkannya ke tujuan seefisien mungkin.
+* Kamu bisa melihat pergerakan taksi ini secara langsung di layar terminalmu (dicetak dalam bentuk teks langkah demi langkah).
+
+---
+
+## ⚙️ Kamus Istilah (Hyperparameters)
+
+Jika kamu melihat bagian atas kode, ada beberapa angka yang disetting. Berikut adalah arti dari angka-angka tersebut:
+
+* **Learning Rate (0.8):** Seberapa cepat AI menyerap informasi baru. Angka 0.8 berarti dia sangat cepat belajar dari kejadian baru dan sedikit melupakan masa lalu.
+* **Discount Rate (0.95):** Pandangan masa depan AI. Angka 0.95 berarti AI sangat peduli pada hadiah jangka panjang (mengantar penumpang sampai tujuan), bukan sekadar hadiah kecil di depan mata.
+* **Epsilon (1.0):** Tingkat "coba-coba". Dimulai dari 100% (benar-benar acak), dan lambat laun menurun (*decay*) hingga tersisa 1% saja saat dia sudah pintar.
+
+---
+
+## 🚀 Cara Menjalankan
+
+1. Simpan kode Python tersebut (misalnya dengan nama `taxi_qlearning.py`).
+2. Buka terminal atau *command prompt*.
+3. Jalankan perintah:
+```bash
+python taxi_qlearning.py
+
+```
+
+4. Tunggu beberapa saat, sebuah grafik akan muncul.
+5. Setelah grafik ditutup (*close*), lihat terminalmu untuk menonton AI menyetir taksi langkah demi langkah sampai selesai!
+```
